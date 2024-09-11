@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- Esta declaração define que o documento atual utiliza HTML5, 
+                que é a versão mais recente e recomendada do HTML. 
+     Ela é crucial para assegurar que o navegador processe o 
+                documento corretamente conforme os padrões modernos. -->
+ 
+<html lang="pt-BR">
+<!-- A tag <html> inicia o documento HTML. O atributo 'lang="pt-BR"' 
+                especifica que o idioma principal do documento 
+                é o português do Brasil.
+     Isso ajuda motores de busca e ferramentas de acessibilidade a
+                tratar o conteúdo do documento de maneira adequada. -->
+ 
+<head>
+<!-- A tag <head> é usada para conter metadados (informações sobre 
+                os dados) que não são exibidos diretamente na página web,
+                mas são importantes para o navegador. Inclui links para folhas de 
+                estilo, scripts, e outras configurações importantes. -->
+ 
+    <meta charset="UTF-8">
+    <!-- Esta tag <meta> define o conjunto de caracteres usado no 
+                    documento como UTF-8, que suporta quase todos os 
+                    caracteres e símbolos usados nas línguas escritas.
+         Isso garante que qualquer texto no documento seja 
+                    exibido corretamente. -->
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Esta tag <meta> é crucial para a construção de páginas web 
+                    responsivas. Ela configura a janela de visualização dos 
+                    navegadores para controlar como a página é dimensionada e 
+                    visualizada em diferentes dispositivos.
+         - 'width=device-width' faz com que a largura da página 
+                    corresponda à largura da tela do dispositivo 
+                    em que é exibida.
+         - 'initial-scale=1.0' define o nível de zoom inicial quando a 
+                    página é carregada pela primeira vez. -->
+ 
+    <title>TreeView de Funcionários</title>
+    <!-- A tag <title> define o título do documento, que é 
+                    mostrado na aba do navegador.
+         Aqui, ele define "TreeView de Funcionários" como o título, 
+                    que ajuda o usuário a identificar sobre o que é a 
+                    página quando muitas abas estão abertas. -->
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
+    <!-- Esta tag <link> é usada para incluir uma folha de estilo 
+                    externa, especificamente os estilos para a biblioteca 
+                    jsTree, que é usada para criar a árvore de 
+                    visualização (TreeView) interativa na página.
+         A folha de estilo é carregada de um CDN (Content Delivery Network), 
+                    garantindo carregamento rápido e eficiência. -->
+ 
+    <link rel="stylesheet" href="estilo.css">
+    <!-- Outra tag <link> para vincular uma folha de estilo 
+                    local chamada 'estilo.css'. 
+         Esta folha de estilo contém estilos específicos 
+                    definidos para customizar a aparência da página. -->
+ 
+</head>
+<!-- A tag </head> marca o fim da seção head do documento HTML. -->
+ 
+ 
+<body>
+<!-- A tag <body> contém todo o conteúdo visível da página. 
+                É aqui que todos os elementos que os usuários 
+                interagem são colocados. -->
+ 
+    <div class="container">
+    <!-- A <div> com a classe "container" serve como um 
+                envoltório principal para o conteúdo da página, 
+                ajudando na organização e no layout. -->
+ 
+        <h1>TreeView de Funcionários</h1>
+        <!-- A tag <h1> é usada para o título principal da página. 
+                    "TreeView de Funcionários" serve para informar ao 
+                    usuário o tema ou o conteúdo principal da página. -->
+ 
+        <div class="conteudo">
+        <!-- Uma <div> com a classe "conteudo" para organizar 
+                    visualmente o layout da árvore de visualização e 
+                    dos detalhes do funcionário. -->
+ 
+            <div id="treeContainer"></div>
+            <!-- Uma <div> com o id "treeContainer" onde a árvore de 
+                        visualização (TreeView) será renderizada. Este 
+                        contêiner será preenchido dinamicamente com 
+                        dados via JavaScript. -->
+ 
+            <div class="detalhes">
+            <!-- Uma <div> com a classe "detalhes" para mostrar 
+                        informações específicas sobre o funcionário 
+                        selecionado na TreeView. -->
+ 
+                <h2>Detalhes do Funcionário</h2>
+                <!-- <h2> fornece um subtítulo para a seção de detalhes, 
+                            claramente distinguindo-a da TreeView. -->
+ 
+                <label for="departamento">Departamento:</label>
+                <!-- <label> associa o texto "Departamento:" ao input 
+                            correspondente por meio do atributo 'for'. 
+                            Isso melhora a acessibilidade e a usabilidade 
+                            do formulário. -->
+ 
+                <input type="text" id="departamento" readonly>
+                <!-- <input> cria um campo de texto onde o departamento do 
+                            funcionário selecionado será exibido. 'readonly' 
+                            impede que o usuário edite o conteúdo. -->
+ 
+                <label for="cargo">Cargo:</label>
+                <!-- Similar ao anterior, uma <label> para o cargo 
+                            do funcionário. -->
+ 
+                <input type="text" id="cargo" readonly>
+                <!-- Um campo de texto que exibe o cargo, também 
+                            configurado como somente leitura. -->
+ 
+                <label for="nome">Nome:</label>
+                <!-- <label> para o nome do funcionário. -->
+ 
+                <input type="text" id="nome" readonly>
+                <!-- Campo de texto para o nome do funcionário, 
+                            novamente somente leitura. -->
+ 
+                <label for="salario">Salário:</label>
+                <!-- <label> para o salário do funcionário. -->
+ 
+                <input type="text" id="salario" readonly>
+                <!-- Campo de texto que mostra o salário do 
+                            funcionário, somente leitura. -->
+ 
+            </div>
+        </div>
+    </div>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Esta tag <script> inclui a biblioteca jQuery na 
+                    versão 3.5.1 através de um CDN (Content 
+                    Delivery Network).
+        jQuery é uma biblioteca JavaScript rápida e concisa que 
+                    simplifica o HTML document traversing (navegação 
+                    pelo documento), 
+        event handling (manipulação de eventos), animating (animações), 
+                    e Ajax interactions (interações Ajax) para 
+                    desenvolvimento web rápido.
+        É amplamente utilizada para facilitar a manipulação e 
+                    interação com os elementos do DOM, eventos, 
+                    animações e para o desenvolvimento de AJAX de 
+                    forma mais simples e compatível entre navegadores. -->
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+    <!-- Esta tag <script> carrega a biblioteca jsTree da 
+                    versão 3.3.12. jsTree é uma biblioteca que 
+                    permite criar árvores de visualização interativas,
+                    como menus ou estruturas hierárquicas visualmente ricas.
+        É comumente usada para apresentar uma visão estruturada de 
+                    diretórios, estruturas organizacionais, ou qualquer 
+                    outro tipo de hierarquia de dados dentro de 
+                    uma interface web. 
+        Neste caso, está sendo usada para exibir a estrutura 
+                    hierárquica dos funcionários, permitindo 
+                    interatividade como seleção e expansão dos 
+                    nós da árvore. -->
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <!-- Esta tag <script> adiciona a biblioteca SheetJS (xlsx) 
+                    na versão 0.16.9 ao documento.
+        SheetJS é uma poderosa biblioteca que permite manipular 
+                    arquivos Excel (e outros formatos de planilhas) 
+                    diretamente no navegador.
+        Pode ser usada para ler dados de arquivos Excel, o que é 
+                    particularmente útil para carregar e exibir 
+                    dados sem a necessidade de um servidor backend 
+                    para processamento.
+        Aqui, ela é utilizada para ler dados de um arquivo Excel e 
+                    usá-los para popular a TreeView e os campos 
+                    detalhados de cada funcionário. -->
+ 
+ 
+    <script src="script.js"></script>
+    <!-- Link para o arquivo JavaScript local 'script.js', que 
+                    contém toda a lógica específica da aplicação, 
+                    como carregar e processar os dados do Excel e 
+                    manipular eventos da TreeView. -->
+                    
+</body>
+<!-- Marca o fim do corpo do documento HTML. -->
+ 
+</html>
+<!-- Marca o fim do documento HTML. -->

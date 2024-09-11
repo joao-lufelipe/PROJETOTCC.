@@ -1,0 +1,292 @@
+
+
+body {
+ 
+    font-family: Arial, sans-serif;
+    /* Define a família de fontes do corpo do documento 
+               para Arial, com um fallback para qualquer 
+               fonte sem serifa disponível.
+       Arial é uma fonte comum, legível e limpa, adequada 
+               para conteúdo de texto na web. */
+ 
+    background-color: #f4f4f4;
+    /* Configura a cor de fundo de toda a página para um 
+               cinza claro (#f4f4f4), o que ajuda a reduzir o contraste
+               e torna o conteúdo mais fácil de visualizar sem distração. */
+ 
+    display: flex;
+    /* Ativa o Flexbox para o layout do `<body>`, um modelo de 
+               layout mais eficiente para alinhar e distribuir 
+               espaço entre itens em um contêiner. */
+ 
+    justify-content: center;
+    /* Alinha todos os itens filhos (neste caso, o `.container`) 
+               horizontalmente no centro do `<body>`. */
+ 
+    align-items: center;
+    /* Alinha todos os itens filhos verticalmente no centro do `<body>`. 
+               Isso é útil para centralizar completamente o `.container` 
+               na página. */
+ 
+    height: 100vh;
+    /* Define a altura do `<body>` para 100% da altura da viewport 
+               (vh - viewport height), o que significa que o 
+               `<body>` sempre ocupará a tela inteira verticalmente. */
+ 
+    margin: 0;
+    /* Remove todas as margens externas do `<body>`, garantindo 
+               que não haja espaço extra ao redor dos bordos da página. */
+ 
+    padding: 20px;
+    /* Aplica um espaçamento interno de 20px ao redor do conteúdo 
+               dentro do `<body>`, criando um espaço entre o conteúdo e 
+               as bordas da janela do navegador. */
+ 
+}
+ 
+ 
+.container {
+ 
+    background: #fff;
+    /* Define a cor de fundo do elemento com a classe `.container` 
+               para branco (#fff), criando um contraste com o 
+               fundo cinza do `<body>`. */
+ 
+    padding: 20px;
+    /* Aplica um espaçamento interno de 20px em todos os lados 
+               dentro do `.container`, aumentando o espaço entre os 
+               elementos internos e as bordas do contêiner. */
+ 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    /* Adiciona uma sombra ao redor do `.container`. A sombra é 
+               sutil (opacidade de 0.1) e se espalha 15 pixels 
+               em todas as direções, o que dá ao `.container` 
+               uma sensação de elevação acima do fundo. */
+ 
+    border-radius: 8px;
+    /* Arredonda os cantos do `.container` com um raio de 8 
+               pixels, suavizando a aparência do contêiner e 
+               tornando-o visualmente mais agradável. */
+ 
+    width: 90%;
+    /* Define a largura do `.container` para ser 90% da 
+               largura de seu contêiner pai (`<body>`), o que o 
+               torna responsivo à largura da tela. */
+ 
+    max-width: 1200px;
+    /* Estabelece uma largura máxima para o `.container` 
+               de 1200 pixels, garantindo que ele não se 
+               torne excessivamente largo em telas muito grandes. */
+ 
+    display: flex;
+    /* Ativa o Flexbox para o layout dentro do `.container`, 
+               permitindo um controle eficiente do layout 
+               dos elementos filhos. */
+ 
+    flex-direction: column;
+    /* Organiza os elementos filhos do `.container` em uma 
+               coluna vertical, em vez do padrão que seria 
+               horizontal. */
+ 
+    align-items: center;
+    /* Alinha todos os elementos filhos do `.container` no 
+               centro horizontalmente, garantindo que estejam 
+               centralizados dentro do contêiner. */
+ 
+}
+ 
+ 
+h1 {
+ 
+    margin-bottom: 20px;
+    /* Define uma margem na parte inferior do 
+               elemento <h1> de 20 pixels. 
+       Isso cria um espaço entre o título e qualquer 
+               conteúdo que o segue, evitando que fiquem 
+               visualmente muito juntos. */
+ 
+    font-size: 24px;
+    /* Estabelece o tamanho da fonte para o <h1> em 24 pixels. 
+       Isso assegura que o título seja grande e claro o 
+               suficiente para chamar atenção como um 
+               elemento de cabeçalho principal. */
+ 
+    color: #333;
+    /* Define a cor do texto do <h1> para um 
+               cinza escuro (#333). 
+       Essa cor é escolhida para oferecer um contraste 
+               suave em vez do preto puro, que pode ser 
+               muito forte, melhorando a leitura em 
+               fundos claros. */
+ 
+}
+ 
+.conteudo {
+ 
+    display: flex;
+    /* Ativa o Flexbox para o layout dentro da <div> 
+               com a classe "conteudo", um modelo que 
+               facilita a organização de elementos 
+               filhos de forma flexível e eficiente. */
+ 
+    width: 100%;
+    /* Define a largura do elemento .conteudo 
+               para 100% do seu contêiner pai. 
+       Isso faz com que ele se estenda completamente na 
+               horizontal dentro de seu contêiner. */
+ 
+    justify-content: space-between;
+    /* Distribui o espaço disponível entre os elementos 
+               filhos de maneira que haja espaço máximo 
+               entre cada elemento.
+       Isso é útil para separar visualmente os dois 
+               principais componentes dentro de .conteudo, 
+               mantendo-os alinhados às bordas opostas. */
+ 
+}
+ 
+#treeContainer {
+ 
+    width: 45%;
+    /* Define a largura do #treeContainer para 45% 
+               do seu contêiner pai. 
+       Isso garante que ele ocupe menos da metade da 
+               largura do contêiner, deixando espaço 
+               para outros elementos adjacentes. */
+ 
+    border: 1px solid #ccc;
+    /* Adiciona uma borda sólida com 1 pixel de espessura e 
+               cor cinza clara (#ccc) ao redor do #treeContainer,
+               o que ajuda a delimitar o elemento 
+               visualmente no layout. */
+ 
+    border-radius: 4px;
+    /* Arredonda os cantos da borda do #treeContainer 
+               com um raio de 4 pixels, suavizando sua 
+               aparência para torná-lo menos rígido e 
+               mais agradável aos olhos. */
+ 
+    padding: 10px;
+    /* Aplica um espaçamento interno de 10 pixels 
+               dentro do #treeContainer, aumentando o 
+               espaço entre o conteúdo interno e as bordas, 
+               melhorando assim a legibilidade e estética. */
+ 
+    background-color: #fafafa;
+    /* Define a cor de fundo do #treeContainer para 
+               um cinza muito claro (#fafafa),
+               que é sutil e ajuda a destacar o 
+               conteúdo dentro dele sem distrair. */
+ 
+    overflow-y: auto;
+    /* Permite que o conteúdo vertical dentro do #treeContainer 
+               seja rolável se ele exceder a altura do contêiner.
+       Isso garante que o conteúdo não se expanda além 
+               das bordas do contêiner, mantendo o layout 
+               limpo e organizado. */
+ 
+}
+ 
+.detalhes {
+ 
+    width: 45%;
+    /* Define a largura do elemento com a classe 'detalhes' 
+               para ocupar 45% da largura de seu contêiner pai,
+               balanceando o espaço com outros elementos 
+               como o 'treeContainer'. */
+ 
+    padding: 20px;
+    /* Aplica um espaçamento interno de 20 pixels em 
+               todos os lados dentro do '.detalhes',
+               criando uma área de buffer entre o conteúdo 
+               interno e as bordas do elemento. */
+ 
+    border: 1px solid #ccc;
+    /* Adiciona uma borda sólida com 1 pixel de espessura e 
+               cor cinza clara (#ccc) ao redor do '.detalhes',
+               ajudando a delimitar visualmente o 
+               elemento no layout. */
+ 
+    border-radius: 4px;
+    /* Arredonda os cantos do '.detalhes' com um 
+               raio de 4 pixels, suavizando a aparência 
+               geral e tornando o design mais 
+               amigável e moderno. */
+ 
+    background-color: #fafafa;
+    /* Define a cor de fundo para um cinza 
+               muito claro (#fafafa), proporcionando 
+               um contraste suave com a maioria dos 
+               conteúdos e combinando com o design 
+               geral do site. */
+ 
+}
+ 
+.detalhes h2 {
+ 
+    margin-top: 0;
+    /* Remove a margem superior do elemento 'h2' 
+               dentro de '.detalhes', garantindo que o 
+               título fique alinhado ao topo do contêiner 
+               sem espaço extra, proporcionando um início 
+               limpo para a seção de detalhes. */
+ 
+}
+ 
+.detalhes label {
+ 
+    display: block;
+    /* Faz cada 'label' se comportar como um bloco, 
+               ocupando toda a largura da linha, o que 
+               facilita a formação de um layout de 
+               formulário claro. */
+ 
+    margin: 10px 0 5px;
+    /* Define as margens para os 'label' como 10 pixels 
+               na parte superior, 0 pixels nas laterais, e 
+               5 pixels na parte inferior, criando um 
+               espaçamento vertical adequado entre cada 
+               elemento de formulário para uma melhor 
+               separação visual. */
+ 
+}
+ 
+.detalhes input {
+ 
+    width: 100%;
+    /* Estabelece que cada 'input' dentro de '.detalhes' 
+               ocupe 100% da largura disponível de 
+               seu contêiner pai, garantindo que o 
+               campo de entrada seja largo o suficiente 
+               para facilitar a entrada de dados. */
+ 
+    padding: 10px;
+    /* Aplica um espaçamento interno de 10 pixels 
+               em todos os lados dos campos 'input',
+               aumentando a área de toque e melhorando a 
+               legibilidade do texto que eles contêm. */
+ 
+    border: 1px solid #ccc;
+    /* Adiciona uma borda sólida com 1 pixel de 
+               espessura e cor cinza clara ao redor 
+               de cada 'input', definindo claramente os 
+               limites do campo de entrada no formulário. */
+ 
+    border-radius: 4px;
+    /* Arredonda os cantos dos campos 'input' com 
+               um raio de 4 pixels, alinhando-se ao 
+               estilo suave dos outros elementos da interface. */
+ 
+    margin-bottom: 10px;
+    /* Aplica uma margem inferior de 10 pixels em cada 'input',
+               criando espaço entre eles e qualquer conteúdo 
+               que os siga, melhorando a organização 
+               vertical do formulário. */
+ 
+    font-size: 16px;
+    /* Define o tamanho da fonte dos 'input' 
+               para 16 pixels, garantindo que o 
+               texto dentro dos campos seja 
+               facilmente legível. */
+               
+}
